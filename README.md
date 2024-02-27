@@ -1,6 +1,59 @@
 # MagentoDockerCompose
 
+This is a generic docker compose PHP-FPM8.1 and nginx for WSL2 with Ubuntu.
+Also includes mariadb, redis, opensearch, rabbitmq and mail catcher.
+
+Keep in mind docker (service) has to be installed in your WSL2 Ubuntu system. You dont need docker desktop on Host machine or WSL2 (but if you do, doesnt matter).
+[Install Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+
+The docker compose file is expecting to have magento code inside src/ folder keep that in mind for the next steps.
+Also the docker containers sufix name will be the same as your root directory. Make this directory unique to avoid container problems in case you have multiple projects.
+
+Currently Xdebug is only working with vscode, phpstorm config has to be added.
+
+Please follow the below instructions depending on your local situation:
+
+## Adding docker compose to already existing project.
+```
+    1. Create a mysqldump for your current porject and save it.
+    2. go to you project directory
+    3. docker compose.yaml expects to have all you code inside /src folder, if you dont have this folder create it.
+        > mkdir src
+    4. move all your code inside /src folder
+        > move ./* /src/ 
+    5. check/rename root directory name (**directory name is used to create docker containers, must be unique for each project**)
+    6. clone repository (since its not new project, you cant directly use git clone)
+        - git init
+        - git remote add origin ssh://git@git-ssh.emeal.nttdata.com:766/DTECOMM/magentodockercompose.git
+        - git pull
+        - git checkout main -f
+        - git branch --set-upstream-to origin/main
+
+    You should have something similar to this:
+    <root directory>
+        <src>
+            <you code, app, vendor, etc>
+        <compose>
+            <env>
+            <nginx>
+            ...
+        compose.yaml
+
+    7. create docker containers (it can take a while)
+        > docker compose up -d
+    8. check all services are up (you has to see a list of containers running)
+        > docker ps
+    9. Insert Dump into mysql container
+        > docker ps (get name of db container)
+        > docker exec -i name_of_db_container mysql -u root -pmagento magento < your-dump.sql
+    10. Go to you local project url 
+        > [open url](http://localhost)
+```
+
+
 TODO: make readme with instructions
+
+
 
 ## Getting started
 
