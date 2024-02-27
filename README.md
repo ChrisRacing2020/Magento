@@ -1,6 +1,6 @@
 # MagentoDockerCompose
 
-
+TODO: make readme with instructions
 
 ## Getting started
 
