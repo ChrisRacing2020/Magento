@@ -1,2 +1,5 @@
 *
 !/.gitignore
+!/compose.yaml
+!/compose
+!/compose/**
