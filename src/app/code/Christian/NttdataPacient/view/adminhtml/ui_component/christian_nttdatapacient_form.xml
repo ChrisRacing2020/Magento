@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">christian_nttdatapacient_form.christian_nttdatapacient_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Christian\NttdataPacient\Block\Adminhtml\Pacient\Edit\Button\Back"/>
+            <button name="delete" class="Christian\NttdataPacient\Block\Adminhtml\Pacient\Edit\Button\DeleteButton"/>
+            <button name="save" class="Christian\NttdataPacient\Block\Adminhtml\Pacient\Edit\Button\Save"/>
+        </buttons>
+        <namespace>christian_nttdatapacient_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>christian_nttdatapacient_form.christian_nttdatapacient_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="christian_nttdatapacient_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="Christian\NttdataPacient\Ui\DataProvider\Pacient" name="christian_nttdatapacient_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="christian_nttdatapacient_fieldset">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="hidden"/>
+         <field name="NIF" formElement="input">
+            <settings>
+                <label translate="true">NIF</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="nombre" formElement="input">
+            <settings>
+                <label translate="true">Nombre</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="apellidos" formElement="input">
+            <settings>
+                <label translate="true">Apellidos</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="telefono" formElement="input">
+            <settings>
+                <label translate="true">Telefono</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="correo" formElement="input">
+            <settings>
+                <label translate="true">Correo</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="localidad" formElement="input">
+            <settings>
+                <label translate="true">Localidad</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+</form>

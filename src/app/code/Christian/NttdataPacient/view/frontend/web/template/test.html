@@ -1,0 +1,61 @@
+<h1>Pacientes</h1>
+Today's message is: <span data-bind="text: message"></span>
+<br>
+<br>
+<button data-bind="click: toggleTableVisibility">Mostrar/Ocultar Tabla</button>
+<div data-bind="visible: isTableVisible">
+<table>
+    <thead>
+        <tr>
+            <th>NIF</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Localidad</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: pacientes">
+        <tr>
+            <td><input data-bind="value: NIF" /></td>
+            <td><input data-bind="value: nombre" /></td>
+            <td><input data-bind="value: apellidos" /></td>
+            <td><input data-bind="value: telefono" /></td>
+            <td><input data-bind="value: correo" /></td>
+            <td><input data-bind="value: localidad" /></td>
+            <td><button data-bind="click: function() { $parent.removePaciente($data) }">Eliminar</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<h2>Agregar Nuevo Paciente</h2>
+<form data-bind="submit: addPaciente">
+    <div>
+        <label for="NIF">NIF:</label>
+        <input type="text" id="NIF" data-bind="value: newPaciente.NIF">
+    </div>
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" data-bind="value: newPaciente.nombre">
+    </div>
+    <div>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" data-bind="value: newPaciente.apellidos">
+    </div>
+    <div>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" data-bind="value: newPaciente.telefono">
+    </div>
+    <div>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" data-bind="value: newPaciente.correo">
+    </div>
+    <div>
+        <label for="localidad">Localidad:</label>
+        <input type="text" id="localidad" data-bind="value: newPaciente.localidad">
+    </div>
+    <br>
+    <div>
+        <button type="submit">Agregar Paciente</button>
+    </div>
+</form>

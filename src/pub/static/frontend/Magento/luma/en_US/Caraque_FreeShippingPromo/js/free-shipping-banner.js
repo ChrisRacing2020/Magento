@@ -1,0 +1,1 @@
+/var/www/html/app/code/Caraque/FreeShippingPromo/view/frontend/web/js/free-shipping-banner.js

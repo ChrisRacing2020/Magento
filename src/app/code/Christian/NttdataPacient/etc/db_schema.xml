@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="christian_nttdatapacient_pacient" engine="innodb" comment="Pacients">
+        <column name="id" xsi:type="int" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column name="NIF" xsi:type="text" nullable="false" comment="nif"/>
+        <column name="nombre" xsi:type="text" nullable="false" comment="nombre"/>
+        <column name="apellidos" xsi:type="text" nullable="false" comment="apellidos"/>
+        <column name="telefono" xsi:type="text" nullable="false" comment="telefono"/>
+        <column name="correo" xsi:type="text" nullable="false" comment="correo"/>
+        <column name="localidad" xsi:type="text" nullable="false" comment="localidad"/>
+        <column name="created_at" xsi:type="datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created at"/>
+        <column name="updated_at" xsi:type="datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+         <index referenceId="CHRISTIAN_NTTDATAPACIENT_PACIENT_NOMBRE" indexType="fulltext">
+            <column name="nombre"/>
+        </index>
+    </table>
+</schema>

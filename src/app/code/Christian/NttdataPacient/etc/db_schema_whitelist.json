@@ -1,0 +1,21 @@
+{
+    "christian_nttdatapacient_pacient": {
+        "column": {
+            "id": true,
+            "NIF": true,
+            "nombre": true,
+            "apellidos": true,
+            "correo": true,
+            "telefono": true,
+            "localidad": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "MACADEMY_CHRISTIAN_PACIENT_LIST": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

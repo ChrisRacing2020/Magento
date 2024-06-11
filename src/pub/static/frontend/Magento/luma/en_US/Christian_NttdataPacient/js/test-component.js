@@ -1,0 +1,1 @@
+/var/www/html/app/code/Christian/NttdataPacient/view/frontend/web/js/test-component.js

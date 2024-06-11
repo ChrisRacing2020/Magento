@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Christian_NttdataPacient::nttdatapacient" title="Nttdata Pacients" module="Christian_NttdataPacient"  sortOrder="50" resource="Christian_NttdataPacient::nttdatapacient" action="nttdatapacient/pacient/index"/>
+    </menu>
+</config>
+

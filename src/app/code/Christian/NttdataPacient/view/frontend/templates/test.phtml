@@ -1,0 +1,19 @@
+<div id="test-component" data-bind="scope:'test-component'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#test-component": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "test-component": {
+                    "component": "Christian_NttdataPacient/js/test-component",
+                    "message": "<?= $block->escapeHtml($block->getMessage()) ?>",
+                    "pacientes": <?= $block->getPacientes() ?>
+                }
+            }
+        }
+    }
+}
+</script>
