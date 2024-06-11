@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   openssh-client \
   libonig-dev \
   libwebp-dev \
+  libmagickwand-dev \
   && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure \
@@ -54,7 +55,9 @@ RUN docker-php-ext-install \
 
 #### START - Instalar Xdebug
 RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    imagick-3.7.0 \
+    && docker-php-ext-enable xdebug \ 
+    imagick
 #### END
 
 #### START - Configuraciones
